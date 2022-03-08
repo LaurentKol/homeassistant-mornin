@@ -1,11 +1,12 @@
 {
   "domain": "mornin",
   "name": "Mornin'",
+  "version": "1.1.1",
   "documentation": "https://github.com/mugifly/homeassistant-mornin",
   "dependencies": [],
   "codeowners": ["@mugifly"],
   "requirements": [
     "pygatt[GATTTOOL]==3.2.0",
-    "pycryptodome==3.6.6"
+    "pycryptodome>=3.6.6"
   ]
 }

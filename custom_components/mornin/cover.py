@@ -1,8 +1,10 @@
 """Mornin as Cover"""
 
 # Import the device class
+# From 2022.3.3 CoverDevice got replaced by CoverEntity
+# See https://github.com/home-assistant/core/commit/8c5c963b9617c3d0419cd6e52e2ba7d6ba9aaba3
 from homeassistant.components.cover import (
-    CoverDevice, PLATFORM_SCHEMA, DEVICE_CLASS_CURTAIN,
+    CoverEntity, PLATFORM_SCHEMA, DEVICE_CLASS_CURTAIN,
     SUPPORT_OPEN, SUPPORT_CLOSE, SUPPORT_STOP
 )
 
@@ -54,7 +56,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
 
     add_devices([MorninCoverDevice(auth_key, mac_address, name, reverse)])
 
-class MorninCoverDevice(CoverDevice):
+class MorninCoverDevice(CoverEntity):
 
     def __init__(self, auth_key: str, mac_address: str, name: str, reverse: bool) -> None:
         """Initialzing device...."""
